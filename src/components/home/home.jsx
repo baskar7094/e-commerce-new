@@ -40,7 +40,7 @@ function Content() {
 
 
                     {/* navbar-button */}
-                    <div className='nav-btn '>
+                    <div className='nav-btn  '>
                         <button className="btn  " data-bs-toggle="offcanvas" data-bs-target="#offtarget"><span className='bi bi-list '></span></button>
                         <Navbar />
                     </div>
@@ -56,19 +56,14 @@ function Content() {
                         <data value="kitchen items">kicthen items</data>
                         <data value="fashion"></data>
                         <data value="dress"></data>
-                    </datalist>
-                    
-                    
-                    
-                    
-                    
-                    
-                    </div>
+                    </datalist>               
+                                         
+                              </div>
 
 
                     {/* language select */}
                     <div className=''>
-                        <select className=' form-select-sm ' >
+                        <select className=' form-select-sm d-none d-md-flex ' >
                             <option>
                                 <img className='w-25 h-25 img-fluid '
                                     src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="ddddd" />
@@ -80,7 +75,7 @@ function Content() {
                     </div>
 
                     {/* account & service list */}
-                    <div className='cards-div d-flex gap-4  '>
+                    <div className='cards-div d-flex gap-4 d-none d-md-flex  '>
                         <Link to={'/'} className='nav-link'>
                             <span className='bi bi-cart'></span>
                             cart </Link>
@@ -117,9 +112,42 @@ function Navbar() {
                 <div className=' offcanvas-header '>
                     <button type="button" className='btn-close' data-bs-dismiss="offcanvas"></button>
                 </div>
-                <div className=' offcanvas-body '>
-                    body
+                <div className=' offcanvas-body'> 
+                   {/* 475 px show */}
+                   <select className=' form-select-sm  d-md-none ' >
+                            <option>
+                                <img className='w-25 h-25 img-fluid '
+                                    src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="ddddd" />
+                                english </option>
+                            <option>
+                                <img src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-square-250.png" alt="fransh img" />
+                                franch </option>
+                        </select>
+
+                   <div className='cards-div d-flex gap-4  d-md-none  '>
+                        <Link to={'/'} className='nav-link '>
+                            <span className='bi bi-cart text-black '></span>
+                            cart </Link>
+                        <Link to={'/'} className='nav-link'>
+                            <span className='bi bi-person'></span>
+                            login</Link>
+                   </div>
+
+                   {/* 547 show item */}
+                   <div>
+                    <ul className='navbar-nav'>
+                        <li className='nav-item'><Link className='nav-link'> mobiles</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> men's dress</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> woman's dress</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> eletric items</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> kichan items</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> toys</Link></li>
+                        <li className='nav-item'><Link className='nav-link'> laptops</Link></li>
+                    </ul>
+                   </div>
+                
                 </div>
+
             </div>
         </>
     )
