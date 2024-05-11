@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@media all and (max-width:600px) {
+    body {
+        width: 100vw;
+        height: auto;
+        overflow-x: hidden;
+        max-width: 600px;
+        max-height: auto;
+    }
+
+    .topbar-sec {
+        display: none;
+    }
+
+    .bg-color {
+        background: linear-gradient(rgba(12, 8, 8, 0.6), rgba(8, 7, 7, 0.1)), url('../public/bg-img.jpg');
+        width: 100vw;
+        height: 80vh;
+        background-size: cover;
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+
+    .content-sec {
+        text-align: center;
+        color: white;
+
+        h1 {
+            text-align: center;
+            color: rgb(238, 229, 229);
+            font-weight: 700;
+            text-transform: capitalize;
+
+
+        }
+    }
+
+    //nav-link 
+
+    .nav-link:hover {
+        color: orange;
+        font-weight: 700;
+        transition: 0.3s;
+        text-transform: capitalize;
+
+    }
+
+    //content main section
+    .content-main-sec {
+        .bi-list {
+            font-size: 50px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .datalist {
+            display: flex;
+            flex-direction: row;
+            max-width: 250px;
+            height: 30px;
+            text-align: center;
+            align-items: center;
+
+            input {
+                width: 240px;
+                height: 30px;
+            }
+
+            button {
+                width: fit-content;
+                height: 30px;
+
+                span {
+                    font-size: 20px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    //carousel-item section
+    .carousel-item-sec {
+
+        .carousel-inner {
+            h2 {
+                font-size: 35px;
+                text-transform: capitalize;
+            }
+        }
+
+        .carousel {
+
+            button {
+                span {
+                    font-size: 60px
+                }
+            }
+
+        }
+
+        .w-75 {
+            width: 100px !important;
+        }
+    }
+
+    //card section
+    .card {
+        margin: 0 auto;
+        max-width: 600px;
+        max-height:auto;
+
+        .img-fulid {
+            width: 100px;
+        }
+
+        .card-header {
+
+            margin: 0px 0 0 8px;
+
+            h4 {
+                font-size: 15px;
+                text-transform: capitalize;
+                font-weight: 800,
+
+            }
+        }
+
+    }
+
+    .carousel {
+        position: relative !important;
+        margin: 10px auto;
+        width: 100%;
+        height: max-content;
+
+        .carousel-btn-response {
+            width: 90%;
+
+            background-color: rgb(184, 47, 47);
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            justify-content: space-around;
+
+            button:first-child {
+                left: 30px;
+                top: 25px;
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            button {
+                right: 30px;
+                top: 25px;
+
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+                background: #000;
+
+            }
+        }
+    }
+
+    .card--section {
+        margin: 20px 0;
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+    }
+
+    .fashion-sec {}
+
+    .footer-sec {
+
+        border-top: 0.7px solid gray;
+        margin-top: 100px;
+        width: 100%;
+
+        article {
+            margin-top: 30px;
+            text-align: center;
+
+            h2 {
+                text-transform: capitalize;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            input {
+                width: 50%;
+                border: none;
+                border-bottom: 1px solid;
+                margin-right: 10px;
+            }
+
+            button {
+                border: none;
+            }
+
+            div {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+            }
+
+            text-transform: capitalize;
+            text-align: center;
+
+        }
+
+        footer {
+            text-align: center;
+
+        }
+    }
+
+}
+
+@media screen and (min-width:1020px) {
+
+
+    .bg-color {
+        background-color: rgb(255, 165, 0);
+        width: 100vw;
+        height: 95vh;
+
+    }
+}
