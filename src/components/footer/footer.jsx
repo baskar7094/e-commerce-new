@@ -12,7 +12,7 @@ export default function Footer() {
                 <input type="text" />
                 <button type="submit" ><Link className='nav-link'>SUBSCRIBE</Link></button>
             </form>
-            <div>
+            <div className=' flex-lg-row  justify-content-center '>
                 <Link className='nav-link' to="">best sellers</Link>
                 <Link className='nav-link' to="">gidt ideas</Link>
                 <Link className='nav-link' to="">new release</Link>

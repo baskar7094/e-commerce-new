@@ -10,10 +10,10 @@ export default function Home() {
                     <TopBar />
                 </header>
                 <section className='content-sec  '>
-                    <div className='py-4'>
+                    <div className=''>
 
                         <h1>Eflyer</h1>
-                        <div className='py-4'>
+                        <div className=''>
                             <Content />
                             <CarousalItem />
                         </div>
@@ -35,51 +35,60 @@ function Content() {
     return (
         <>
             <section className='content-main-sec'>
-                <div className='row justify-content-between align-items-center  mx-4 '>
+                <div className=' responsive d-grid '>
 
 
-                    <div className='col-6 row order-1  order-lg-1 align-items-center    '>
 
-                        {/* navbar-button */}
-                        <div className='col-6 '>
-                            <button className="btn  " data-bs-toggle="offcanvas" data-bs-target="#offtarget"><span className='bi bi-list '></span></button>
-                            <Navbar />
-                        </div>
-                        {/* datalist - search  */}
-                        <div className=' datalist  list-group order-2   col-6  '>
-                            <input type="text" placeholder='enter your value' className='border-0 form-control-sm  ' />
-                            <button className='border-0 form-control-sm '><span className='bi bi-search  '></span></button>
-                        </div>
+                    {/* navbar-button */}
+                    <div className='nav-btn '>
+                        <button className="btn  " data-bs-toggle="offcanvas" data-bs-target="#offtarget"><span className='bi bi-list '></span></button>
+                        <Navbar />
+                    </div>
+                    {/* datalist - search  */}
+                    <div className=' datalist    '>
+                        <input list='browsers' name='browsers' placeholder='enter your value' className='border-0 form-control-sm   ' />
+                        <button type="submit" className='border-0 form-control-sm '><span className='bi bi-search  '></span></button>
+                    
+                    <datalist id="browsers" >
+                        <data value="mobiles">mobile</data>
+                        <data value="bags">bags</data>
+                        <data value="tablets">tablets</data>
+                        <data value="kitchen items">kicthen items</data>
+                        <data value="fashion"></data>
+                        <data value="dress"></data>
+                    </datalist>
+                    
+                    
+                    
+                    
+                    
+                    
                     </div>
 
-                    <div className='col-6 row order-2 order-lg-2 align-items-center   '>
 
-                        {/* language select */}
-                        <div className='contry-div col-6 d-none'>
-                            <select className=' form-select-sm ' >
-                                <option>
-                                    <img className='w-25 h-25 img-fluid '
-                                        src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="ddddd" />
-                                    english </option>
-                                <option>
-                                    <img src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-square-250.png" alt="fransh img" />
-                                    franch </option>
-                            </select>
-                        </div>
-
-                        {/* account & service list */}
-                        <div className='cards-div col-12 d-flex justify-content-center align-items-center mx-5 gap-2  '>
-                            <Link to={'/'} className='nav-link'>
-                                <span className='bi bi-cart'></span>
-                                cart </Link>
-                            <Link to={'/'} className='nav-link'>
-                                <span className='bi bi-person'></span>
-                                login</Link>
-                        </div>
-                        <div>
-
-                        </div>
+                    {/* language select */}
+                    <div className=''>
+                        <select className=' form-select-sm ' >
+                            <option>
+                                <img className='w-25 h-25 img-fluid '
+                                    src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="ddddd" />
+                                english </option>
+                            <option>
+                                <img src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-square-250.png" alt="fransh img" />
+                                franch </option>
+                        </select>
                     </div>
+
+                    {/* account & service list */}
+                    <div className='cards-div d-flex gap-4  '>
+                        <Link to={'/'} className='nav-link'>
+                            <span className='bi bi-cart'></span>
+                            cart </Link>
+                        <Link to={'/'} className='nav-link'>
+                            <span className='bi bi-person'></span>
+                            login</Link>
+                    </div>
+
                 </div>
             </section>
         </>
@@ -88,16 +97,14 @@ function Content() {
 
 function TopBar() {
     return (
-        <section className='topbar-sec'>
+        <section className='topbar-sec '>
 
-            <div className='w-full '>
-                <div className=' d-lg-flex gap-2 w-75 mx-auto rounded-4  justify-content-lg-center align-items-center bg-dark py-lg-4  text-capitalize    '>
-                    <Link to={'/'} >best sellers</Link>
-                    <Link to={'/'} >gift ideas</Link>
-                    <Link to={'/'} >new release</Link>
-                    <Link to={'/'} >today's deals</Link>
-                    <Link to={'/'} >customer service</Link>
-                </div>
+            <div className='   d-flex justify-content-center  align-items-center text-white-50  text-capitalize   '>
+                <Link to={'/'} className='nav-link' >best sellers</Link>
+                <Link to={'/'} className='nav-link' >gift ideas</Link>
+                <Link to={'/'} className='nav-link' >new release</Link>
+                <Link to={'/'} className='nav-link' >today's deals</Link>
+                <Link to={'/'} className='nav-link' >customer service</Link>
             </div>
         </section>
     )

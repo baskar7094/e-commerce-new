@@ -9,13 +9,50 @@
     font-style: normal;
 }
 
-@media all and (max-width:600px) {
+@mixin bgImg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin textcenter {
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+
+}
+
+@mixin smallsize {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+@mixin resonsive {
+    width: 100%;
+    height: auto;
+
+}
+
+@mixin flexres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: auto;
+}
+
+@media all and (max-width:475px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
     body {
-        width: 100vw;
-        height: auto;
         overflow-x: hidden;
-        max-width: 600px;
-        max-height: auto;
+        @include resonsive();
     }
 
     .topbar-sec {
@@ -24,24 +61,21 @@
 
     .bg-color {
         background: linear-gradient(rgba(12, 8, 8, 0.6), rgba(8, 7, 7, 0.1)), url('../public/bg-img.jpg');
-        width: 100vw;
-        height: 80vh;
-        background-size: cover;
-        object-fit: cover;
-        object-position: center;
-
+        @include bgImg();
+        @include resonsive();
+        overflow-x: hidden;
+        background-attachment: fixed;
     }
 
 
     .content-sec {
-        text-align: center;
-        color: white;
+        @include textcenter();
+        @include resonsive();
+        padding: 20px;
+        margin: 10px;
 
         h1 {
-            text-align: center;
-            color: rgb(238, 229, 229);
-            font-weight: 700;
-            text-transform: capitalize;
+            @include textcenter();
 
 
         }
@@ -60,31 +94,37 @@
     //content main section
     .content-main-sec {
         .bi-list {
-            font-size: 50px;
-            color: white;
-            font-weight: 900;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .responsive {
+grid-template-columns: auto auto;
+justify-content: space-between;
+align-items: center;
+gap:10px
         }
 
         .datalist {
-            display: flex;
+            @include flexres();
             flex-direction: row;
-            max-width: 250px;
+            width: 0%;
             height: 30px;
             text-align: center;
-            align-items: center;
+            justify-content: start; 
 
             input {
-                width: 240px;
+                width: 10em;
                 height: 30px;
             }
 
             button {
                 width: fit-content;
-                height: 30px;
+                height: 20px;
 
                 span {
-                    font-size: 20px;
-                    padding: 10px;
+                    font-size: 10px;
+                    padding: 5px;
                 }
             }
         }
@@ -95,12 +135,14 @@
 
         .carousel-inner {
             h2 {
-                font-size: 35px;
+                font-size: 20px;
                 text-transform: capitalize;
             }
         }
 
         .carousel {
+
+            @include textcenter();
 
             button {
                 span {
@@ -117,9 +159,8 @@
 
     //card section
     .card {
+        @include resonsive();
         margin: 0 auto;
-        max-width: 600px;
-        max-height:auto;
 
         .img-fulid {
             width: 100px;
@@ -140,12 +181,12 @@
     }
 
     .carousel {
+        @include resonsive();
         position: relative !important;
         margin: 10px auto;
-        width: 100%;
-        height: max-content;
 
         .carousel-btn-response {
+            display: none;
             width: 90%;
 
             background-color: rgb(184, 47, 47);
@@ -178,18 +219,17 @@
     }
 
     .card--section {
-        margin: 20px 0;
+        margin: 20px 5px;
 
         h2 {
-            font-size: 30px;
-            text-align: center;
-            text-transform: capitalize;
+            @include textcenter();
+            color: black;
+            font-size: 25px;
             font-weight: 600;
         }
 
     }
 
-    .fashion-sec {}
 
     .footer-sec {
 
@@ -226,26 +266,730 @@
 
             }
 
-            text-transform: capitalize;
-            text-align: center;
-
+@include textcenter();
         }
 
         footer {
-            text-align: center;
+            @include textcenter();
 
         }
     }
 
 }
 
-@media screen and (min-width:1020px) {
+@media screen and (min-width:475px) {
 
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow-x: hidden;
+        @include resonsive();
+    }
+
+    .topbar-sec {
+        display: flex;
+        background: #000;
+        width: 610px;
+        margin:  0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        a{
+            font-size: 13px
+        }
+        div{
+            @include flexres();
+            @include textcenter();
+justify-content: center;
+            gap: 10px;
+
+        }
+    }
 
     .bg-color {
-        background-color: rgb(255, 165, 0);
-        width: 100vw;
-        height: 95vh;
+        background: linear-gradient(rgba(12, 8, 8, 0.6), rgba(8, 7, 7, 0.1)), url('../public/bg-img.jpg');
+        @include bgImg();
+        @include resonsive();
+        overflow-x: hidden;
+        background-attachment: fixed;
+        background-position: center;
+        background-position-y: 100%
+    }
 
+
+    .content-sec {
+        @include textcenter();
+        @include resonsive();
+        padding: 20px;
+        margin: 10px;
+
+        h1 {
+            @include textcenter();
+            font-size: 36px;
+            font-weight: 700;
+
+
+        }
+    }
+
+    //nav-link 
+
+    .nav-link:hover {
+        color: orange;
+        font-weight: 700;
+        transition: 0.3s;
+        text-transform: capitalize;
+
+    }
+
+    //content main section
+    .content-main-sec {
+        .bi-list {
+            font-size: 30px;
+            color: black;
+            font-weight: 800;
+            border: 10px solid
+        }
+
+        .responsive {
+            @include flexres();
+            justify-content: space-around
+        }
+
+        .datalist {
+            @include flexres();
+            flex-direction: row;
+            width: 10%;
+            height: 30px;
+            text-align: center;
+
+            input {
+                width: 10em;
+                height: 30px;
+            }
+
+            button {
+                width: fit-content;
+                height: 20px;
+
+                span {
+                    font-size: 10px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    //carousel-item section
+    .carousel-item-sec {
+
+        .carousel-inner {
+            display: grid;
+            grid-template-columns: auto auto ;
+            margin: 10px 0px;
+            padding: 10px;
+            gap: 10px;
+            h2 {
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+        }
+
+        .carousel {
+
+            @include textcenter();
+
+            button {
+                span {
+                    font-size: 60px
+                }
+            }
+
+        }
+
+        .w-75 {
+            width: 100px !important;
+        }
+    }
+
+    //card section
+    .card {
+        @include resonsive();
+        margin: 0 auto;
+
+        .img-fulid {
+            width: 100px;
+        }
+
+        .card-header {
+
+            margin: 0px 0 0 8px;
+
+            h4 {
+                font-size: 15px;
+                text-transform: capitalize;
+                font-weight: 800,
+
+            }
+        }
+
+    }
+
+    .carousel {
+        @include resonsive();
+        position: relative !important;
+        margin: 10px auto;
+
+        .carousel-btn-response {
+            display: none;
+            width: 90%;
+
+            background-color: rgb(184, 47, 47);
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            justify-content: space-around;
+
+            button:first-child {
+                left: 30px;
+                top: 25px;
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            button {
+                right: 30px;
+                top: 25px;
+
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+                background: #000;
+
+            }
+        }
+    }
+
+    .card--section {
+        margin: 20px 5px;
+
+        h2 {
+            @include textcenter();
+            color: black;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+    }
+
+
+    .footer-sec {
+
+        border-top: 0.7px solid gray;
+        margin-top: 100px;
+        width: 100%;
+
+        article {
+            margin-top: 30px;
+            text-align: center;
+
+            h2 {
+                text-transform: capitalize;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            input {
+                width: 50%;
+                border: none;
+                border-bottom: 1px solid;
+                margin-right: 10px;
+            }
+
+            button {
+                border: none;
+            }
+
+            div {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+            }
+
+@include textcenter();
+        }
+
+        footer {
+            @include textcenter();
+
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+  
+
+
+    .topbar-sec {
+        width: 610px;
+        padding: 20px;
+        border-radius: 10px;
+        a{
+            font-size: 16px
+        }
+      
+    }
+
+ 
+
+
+    .content-sec {
+        @include textcenter();
+        @include resonsive();
+        padding: 20px;
+        margin: 10px;
+
+        h1 {
+            @include textcenter();
+            font-size: 40px;
+            font-weight: 700;
+
+
+        }
+    }
+
+    //nav-link 
+
+    .nav-link:hover {
+        color: orange;
+        font-weight: 700;
+        transition: 0.3s;
+        text-transform: capitalize;
+
+    }
+
+    //content main section
+    .content-main-sec {
+        .bi-list {
+            font-size: 30px;
+            color: black;
+            font-weight: 800;
+            border: 10px solid
+        }
+
+        .responsive {
+            @include flexres();
+            justify-content: space-around
+        }
+
+        .datalist {
+            @include flexres();
+            flex-direction: row;
+            width: 10%;
+            height: 30px;
+            text-align: center;
+
+            input {
+                width: 10em;
+                height: 30px;
+            }
+
+            button {
+                width: fit-content;
+                height: 20px;
+
+                span {
+                    font-size: 10px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    //carousel-item section
+    .carousel-item-sec {
+
+        .carousel-inner {
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            margin: 10px 0px;
+            padding: 10px;
+            gap: 10px;
+            h2 {
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+        }
+
+        .carousel {
+
+            @include textcenter();
+
+            button {
+                span {
+                    font-size: 60px
+                }
+            }
+
+        }
+
+        .w-75 {
+            width: 100px !important;
+        }
+    }
+
+    //card section
+    .card {
+        @include resonsive();
+        margin: 0 auto;
+
+        .img-fulid {
+            width: 100px;
+        }
+
+        .card-header {
+
+            margin: 0px 0 0 8px;
+
+            h4 {
+                font-size: 15px;
+                text-transform: capitalize;
+                font-weight: 800,
+
+            }
+        }
+
+    }
+
+    .carousel {
+        @include resonsive();
+        position: relative !important;
+        margin: 10px auto;
+
+        .carousel-btn-response {
+            display: none;
+            width: 90%;
+
+            background-color: rgb(184, 47, 47);
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            justify-content: space-around;
+
+            button:first-child {
+                left: 30px;
+                top: 25px;
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            button {
+                right: 30px;
+                top: 25px;
+
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+                background: #000;
+
+            }
+        }
+    }
+
+    .card--section {
+        margin: 20px 5px;
+
+        h2 {
+            @include textcenter();
+            color: black;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+    }
+
+
+    .footer-sec {
+
+        border-top: 0.7px solid gray;
+        margin-top: 100px;
+        width: 100%;
+
+        article {
+            margin-top: 30px;
+            text-align: center;
+
+            h2 {
+                text-transform: capitalize;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            input {
+                width: 50%;
+                border: none;
+                border-bottom: 1px solid;
+                margin-right: 10px;
+            }
+
+            button {
+                border: none;
+            }
+
+            div {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+            }
+
+@include textcenter();
+        }
+
+        footer {
+            @include textcenter();
+
+        }
+    }
+}
+@media screen and (min-width:1024px) {
+    .bg-color{
+        height: 100vh;
+    }
+    .topbar-sec {
+        width: 750px;
+        padding: 20px;
+        border-radius: 10px;
+        a{
+            font-size: 20px
+        }
+      
+    }
+
+ 
+
+
+    .content-sec {
+        @include textcenter();
+        @include resonsive();
+        padding: 20px;
+        margin: 10px;
+
+        h1 {
+            @include textcenter();
+            font-size: 40px;
+            font-weight: 700;
+
+
+        }
+    }
+
+    //nav-link 
+
+    .nav-link:hover {
+        color: orange;
+        font-weight: 700;
+        transition: 0.3s;
+        text-transform: capitalize;
+
+    }
+
+    //content main section
+    .content-main-sec {
+        .bi-list {
+            font-size: 30px;
+            color: black;
+            font-weight: 800;
+            border: 10px solid
+        }
+
+        .responsive {
+            grid-template-columns:auto auto auto auto 
+
+        }
+
+        .datalist {
+            @include flexres();
+            flex-direction: row;
+            width: 10%;
+            height: 30px;
+            text-align: center;
+
+            input {
+                width: 10em;
+                height: 30px;
+            }
+
+            button {
+                width: fit-content;
+                height: 20px;
+
+                span {
+                    font-size: 10px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    //carousel-item section
+    .carousel-item-sec {
+
+        .carousel-inner {
+            display: grid;
+            grid-template-columns: auto auto auto auto ;
+            margin: 10px 0px;
+            padding: 20px;
+            gap: 10px;
+            h2 {
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+        }
+
+        .carousel {
+
+            @include textcenter();
+
+            button {
+                span {
+                    font-size: 60px
+                }
+            }
+
+        }
+
+        .w-75 {
+            width: 100px !important;
+        }
+    }
+
+    //card section
+    .card {
+        @include resonsive();
+        margin: 0 auto;
+
+        .img-fulid {
+            width: 100px;
+        }
+
+        .card-header {
+
+            margin: 0px 0 0 8px;
+
+            h4 {
+                font-size: 15px;
+                text-transform: capitalize;
+                font-weight: 800,
+
+            }
+        }
+
+    }
+
+    .carousel {
+        @include resonsive();
+        position: relative !important;
+        margin: 10px auto;
+
+        .carousel-btn-response {
+            display: none;
+            width: 90%;
+
+            background-color: rgb(184, 47, 47);
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            justify-content: space-around;
+
+            button:first-child {
+                left: 30px;
+                top: 25px;
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            button {
+                right: 30px;
+                top: 25px;
+
+                max-width: 40px !important;
+                max-height: 50px !important;
+                width: 100px !important;
+                height: 100px !important;
+                background: #000;
+
+            }
+        }
+    }
+
+    .card--section {
+        margin: 20px 5px;
+
+        h2 {
+            @include textcenter();
+            color: black;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+    }
+
+
+    .footer-sec {
+
+        border-top: 0.7px solid gray;
+        margin-top: 100px;
+        width: 100%;
+
+        article {
+            margin-top: 30px;
+            text-align: center;
+
+            h2 {
+                text-transform: capitalize;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            input {
+                width: 50%;
+                border: none;
+                border-bottom: 1px solid;
+                margin-right: 10px;
+            }
+
+            button {
+                border: none;
+            }
+
+            div {
+                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+            }
+
+@include textcenter();
+        }
+
+        footer {
+            @include textcenter();
+
+        }
     }
 }

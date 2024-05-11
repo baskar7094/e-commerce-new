@@ -24,7 +24,7 @@ function FashionItem() {
     return (
         <section className='  carousel-item-sec position-relative  '>
             <div className='  carousel slide  w-100' id="iddef" >
-                <div className='carousel-inner row row-cols-2 justify-content-evenly p-2 my-5   '>
+                <div className='carousel-inner  fashion-item   '>
                     <div value="carousel-item active ">
                         <CardItem
                             brandname="brand - shoe"
@@ -72,7 +72,7 @@ function ElectoricItem() {
     return (
         <section className=' carousel-item-sec position-relative '>
             <div className=' carousel slide w-100 ' id="iddef" >
-                <div className='carousel-inner row row-cols-2 justify-content-evenly p-2 my-5  '>
+                <div className='carousel-inner eletric-item '>
                     <div value="carousel-item active">
                         <CardItem
                             brandname="brand - shoe"
@@ -119,8 +119,8 @@ function JewellaryItem() {
     return (
         <section className=' carousel-item-sec position-relative '>
             <div className=' carousel slide w-100  ' id="iddef" >
-                <div className='carousel-inner row row-cols-2  justify-content-evenly p-2 my-5  '>
-                    <div value="carousel-item active">
+                <div className='carousel-inner jew-item  '>
+                    <div value="carousel-item ">
                         <CardItem
                             brandname="brand - shoe"
                             price={20}
@@ -181,7 +181,7 @@ export function CardItem(props) {
                 </div>
                 <div className=' card-footer '>
 
-                    <div className=' card-group  justify-content-between '>
+                    <div className=' card-group d-flex  justify-content-between '>
                         <Link className='nav-link' >buy now</Link>
                         <Link className='nav-link'>save more</Link>
                     </div>
