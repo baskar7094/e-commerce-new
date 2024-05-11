@@ -50,12 +50,13 @@ function Content() {
                         <button type="submit" className='border-0 form-control-sm '><span className='bi bi-search  '></span></button>
                     
                     <datalist id="browsers" >
-                        <data value="mobiles">mobile</data>
-                        <data value="bags">bags</data>
-                        <data value="tablets">tablets</data>
-                        <data value="kitchen items">kicthen items</data>
-                        <data value="fashion"></data>
-                        <data value="dress"></data>
+<option value="mobiles"></option>
+<option value="kitchen items"></option>
+<option value="eletrnic items"></option>
+<option value="toys"></option>
+<option value="laptops"></option>
+<option value="gym items"></option>
+<option value="fashion dress's"></option>
                     </datalist>               
                                          
                               </div>
